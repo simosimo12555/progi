@@ -1,32 +1,16 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+/* وضع المظلم */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-h1, h2, h3 {
-    color: #2c3e50;
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
-.card {
-    border: none;
-    border-radius: 10px;
-}
-
-.list-group-item {
-    border: none;
-    margin: 5px 0;
-    border-radius: 5px;
-    background-color: #f8f9fa;
-}
-
-.btn-primary {
-    background-color: #3498db;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.btn-primary:hover {
-    background-color: #2980b9;
+body.dark-mode .list-group-item {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #444;
 }

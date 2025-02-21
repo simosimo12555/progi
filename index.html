@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -19,68 +9,96 @@
 </head>
 <body class="bg-light">
     <div class="container py-5">
-        <h1 class="text-center mb-4">حاسبة السعرات الحرارية والتمارين</h1>
+        <!-- زر تبديل اللغة -->
+        <div class="text-end mb-3">
+            <button id="languageToggle" class="btn btn-secondary">English</button>
+        </div>
+        <!-- زر وضع المظلم -->
+        <div class="text-end mb-3">
+            <button id="darkModeToggle" class="btn btn-dark">🌙</button>
+        </div>
+
+        <h1 class="text-center mb-4" data-lang="ar">حاسبة السعرات الحرارية والتمارين</h1>
+        <h1 class="text-center mb-4 d-none" data-lang="en">Calorie and Exercise Calculator</h1>
+
         <div class="card shadow">
             <div class="card-body">
                 <form id="calorieForm">
                     <div class="mb-3">
-                        <label for="gender" class="form-label">الجنس:</label>
+                        <label for="gender" class="form-label" data-lang="ar">الجنس:</label>
+                        <label for="gender" class="form-label d-none" data-lang="en">Gender:</label>
                         <select id="gender" class="form-select" required>
-                            <option value="male">ذكر</option>
-                            <option value="female">أنثى</option>
+                            <option value="male" data-lang="ar">ذكر</option>
+                            <option value="male" data-lang="en">Male</option>
+                            <option value="female" data-lang="ar">أنثى</option>
+                            <option value="female" data-lang="en">Female</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="age" class="form-label">العمر:</label>
+                        <label for="age" class="form-label" data-lang="ar">العمر:</label>
+                        <label for="age" class="form-label d-none" data-lang="en">Age:</label>
                         <input type="number" id="age" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="weight" class="form-label">الوزن (كجم):</label>
+                        <label for="weight" class="form-label" data-lang="ar">الوزن (كجم):</label>
+                        <label for="weight" class="form-label d-none" data-lang="en">Weight (kg):</label>
                         <input type="number" id="weight" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="height" class="form-label">الطول (سم):</label>
+                        <label for="height" class="form-label" data-lang="ar">الطول (سم):</label>
+                        <label for="height" class="form-label d-none" data-lang="en">Height (cm):</label>
                         <input type="number" id="height" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="activity" class="form-label">نشاطك اليومي:</label>
+                        <label for="activity" class="form-label" data-lang="ar">نشاطك اليومي:</label>
+                        <label for="activity" class="form-label d-none" data-lang="en">Daily Activity:</label>
                         <select id="activity" class="form-select" required>
-                            <option value="1.2">قليل النشاط (لا تمارين)</option>
-                            <option value="1.375">خفيف النشاط (تمارين خفيفة)</option>
-                            <option value="1.55">متوسط النشاط (تمارين متوسطة)</option>
-                            <option value="1.725">عالي النشاط (تمارين قوية)</option>
-                            <option value="1.9">عالٍ جدًا (تمارين قوية جدًا)</option>
+                            <option value="1.2" data-lang="ar">قليل النشاط (لا تمارين)</option>
+                            <option value="1.2" data-lang="en">Sedentary (Little or no exercise)</option>
+                            <option value="1.375" data-lang="ar">خفيف النشاط (تمارين خفيفة)</option>
+                            <option value="1.375" data-lang="en">Lightly active (Light exercise)</option>
+                            <option value="1.55" data-lang="ar">متوسط النشاط (تمارين متوسطة)</option>
+                            <option value="1.55" data-lang="en">Moderately active (Moderate exercise)</option>
+                            <option value="1.725" data-lang="ar">عالي النشاط (تمارين قوية)</option>
+                            <option value="1.725" data-lang="en">Very active (Hard exercise)</option>
+                            <option value="1.9" data-lang="ar">عالٍ جدًا (تمارين قوية جدًا)</option>
+                            <option value="1.9" data-lang="en">Extra active (Very hard exercise)</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="goal" class="form-label">هدفك:</label>
+                        <label for="goal" class="form-label" data-lang="ar">هدفك:</label>
+                        <label for="goal" class="form-label d-none" data-lang="en">Goal:</label>
                         <select id="goal" class="form-select" required>
-                            <option value="gain">زيادة الكتلة العضلية</option>
-                            <option value="lose">فقدان الوزن</option>
+                            <option value="gain" data-lang="ar">زيادة الكتلة العضلية</option>
+                            <option value="gain" data-lang="en">Gain Muscle</option>
+                            <option value="lose" data-lang="ar">فقدان الوزن</option>
+                            <option value="lose" data-lang="en">Lose Weight</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">احسب السعرات الحرارية</button>
+                    <button type="submit" class="btn btn-primary w-100" data-lang="ar">احسب السعرات الحرارية</button>
+                    <button type="submit" class="btn btn-primary w-100 d-none" data-lang="en">Calculate Calories</button>
                 </form>
             </div>
         </div>
 
         <div id="result" class="card shadow mt-4 d-none">
             <div class="card-body">
-                <h2 class="text-center mb-3">النتيجة:</h2>
+                <h2 class="text-center mb-3" data-lang="ar">النتيجة:</h2>
+                <h2 class="text-center mb-3 d-none" data-lang="en">Result:</h2>
                 <p id="caloriesNeeded" class="text-center fs-5"></p>
-                <h3 class="text-center mt-4">اقتراحات الوجبات:</h3>
+                <h3 class="text-center mt-4" data-lang="ar">اقتراحات الوجبات:</h3>
+                <h3 class="text-center mt-4 d-none" data-lang="en">Meal Suggestions:</h3>
                 <ul id="mealSuggestions" class="list-group"></ul>
-                <h3 class="text-center mt-4">اقتراحات التمارين:</h3>
+                <h3 class="text-center mt-4" data-lang="ar">اقتراحات التمارين:</h3>
+                <h3 class="text-center mt-4 d-none" data-lang="en">Exercise Suggestions:</h3>
                 <ul id="exerciseSuggestions" class="list-group"></ul>
+                <h3 class="text-center mt-4" data-lang="ar">نصائح:</h3>
+                <h3 class="text-center mt-4 d-none" data-lang="en">Tips:</h3>
+                <ul id="tips" class="list-group"></ul>
             </div>
         </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
 </body>
 </html>
